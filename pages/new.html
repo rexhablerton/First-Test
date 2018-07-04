@@ -1,87 +1,36 @@
-	<!-- Save -->
-	<div class="singup jumbotron"  >
-		<form  name="myForm" ng-submit="submitForm(true.$valid)" novalidate >
-			<div class="form-group">
-				<label for="username" class="control-label" translate="Name">Name: </label>
-				<input type="text" class="form-control" name="username" ng-model="vm.myData.myEmri" ng-minlength="3" ng-required="true">
-			    <div ng-messages="myForm.username.$error" ng-if="myForm.$submitted || myForm.username.$dirty">
-			        <p ng-message="minlength" class="text-danger">Your name is too short.</p>
-			        <p ng-message="required" class="text-danger">Your name is required.</p>
-			    </div>
-			</div>
-			<div class="form-group">
-				<label for="Mbiemri" class="control-label" translate="Surname">Surname: </label>	
-				<input type="text"  class="form-control" name="Mbiemri" ng-model="vm.myData.myMbiemri" ng-minlength="3" ng-required="true" />
-				<div ng-messages="myForm.Mbiemri.$error" ng-if="myForm.$submitted || myForm.Mbiemri.$dirty">
-			        <p ng-message="minlength" class="text-danger">Your surname is to short.</p>
-			        <p ng-message="required"  class="text-danger">Your surname is required.</p>
-			    </div>
-
-            </div> 
-	
-			<div class="form-group">
-				<label translate="Db">Date of birth: </label>
-				<input type="date" class="form-control" name="Datlindja" ng-model="vm.myData.myDatlindja">
-			</div>
-			<div class="form-group"><label translate="Country" >Country: </label>
-				<select  class="form-control" ng-model="vm.myData.myVendi" >
-					<option value="Prishtine">	Prishtine	</option>
-					<option value="Prizeren">	Prizeren	</option>
-					<option value="Peje">		Peje		</option>
-					<option value="Drenas">		Drenas		</option>
-				</select>
-			</div>
-			<br>
-			<button type="submit" ng-click=" myForm.$valid && vm.addData(vm.myData);" class="btn-primary btn" >Save</button>		
-		</form>		
-	</div>
-
-
-
-
-	<!-- Edit -->
-	<!-- <div class="edit jumbotron"  ng-if="vm.edit===true">
-		<form ng-submit="submitForm(editForm.$valid)" name="editForm" novalidate>
-			<div class="form-group">
-				<label for="username" class="control-label" translate="Name">Name: </label>
-				<input type="text" class="form-control" name="username" ng-model="vm.myData.myEmri" ng-minlength="3" ng-required="true">
-			    <div ng-messages="editForm.username.$error" ng-if="editForm.$submitted || editForm.username.$dirty">
-			        <p ng-message="minlength" class="text-danger">Your name is too short.</p>
-			        <p ng-message="required" class="text-danger">Your name is required.</p>
-			    </div>
-			</div>
-			<div class="form-group">
-				<label for="Mbiemri" class="control-label" translate="Surname">Surname: </label>	
-				<input type="text"  class="form-control" name="Mbiemri" ng-model="vm.myData.myMbiemri" ng-minlength="3" ng-required="true" />
-				<div ng-messages="editForm.Mbiemri.$error" ng-if="editForm.$submitted || editForm.Mbiemri.$dirty">
-			        <p ng-message="minlength" >Your surname is to short.</p>
-			        <p ng-message="required">Your surname is required.</p>
-			    </div>
-
-            </div> 
-	
-			<div class="form-group">
-				<label translate="Db">Date of birth: </label>
-				<input type="date" class="form-control" name="Datlindja" ng-model="vm.myData.myDatlindja">
-			</div>
-		
-
-			<div class="form-group"><label translate="Country">Country: </label>
-				<select  class="form-control" ng-model="vm.myData.myVendi"  >
-					<option value="Prishtine">	Prishtine	</option>
-					<option value="Prizeren"> 	Prizeren	</option>
-					<option value="Peje"> 		Peje		</option>
-					<option value="Drenas"> 	Drenas		</option>
-				</select>
-			</div>
-			<br>
-			<button ng-click="editForm.$valid && vm.editData(vm.myData)" class="btn-primary btn" >Save</button>		
-		</form>
-	</div>
-
-
-
- -->
-
-
-
+<!-- Save -->
+<div class="singup jumbotron">
+    <form name="myForm" ng-submit="submitForm(true.$valid)" novalidate>
+        <div class="form-group">
+            <label for="username" class="control-label" translate="Name">Name: </label>
+            <input type="text" class="form-control" name="username" ng-model="vm.myData.myEmri" ng-minlength="3" ng-required="true">
+            <div ng-messages="myForm.username.$error" ng-if="myForm.$submitted || myForm.username.$dirty">
+                <p ng-message="minlength" class="text-danger">Your name is too short.</p>
+                <p ng-message="required" class="text-danger">Your name is required.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Mbiemri" class="control-label" translate="Surname">Surname: </label>
+            <input type="text" class="form-control" name="Mbiemri" ng-model="vm.myData.myMbiemri" ng-minlength="3" ng-required="true" />
+            <div ng-messages="myForm.Mbiemri.$error" ng-if="myForm.$submitted || myForm.Mbiemri.$dirty">
+                <p ng-message="minlength" class="text-danger">Your surname is to short.</p>
+                <p ng-message="required" class="text-danger">Your surname is required.</p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label translate="Db">Date of birth: </label>
+            <input type="date" class="form-control" name="Datlindja" ng-model="vm.myData.myDatlindja">
+        </div>
+        <div class="form-group">
+            <label translate="Country">Country: </label>
+            <select class="form-control" ng-model="vm.myData.myVendi">
+                <option value="Prishtine"> Prishtine </option>
+                <option value="Prizeren"> Prizeren </option>
+                <option value="Peje"> Peje </option>
+                <option value="Drenas"> Drenas </option>
+            </select>
+        </div>
+        <br>
+        <button type="submit" ng-click=" myForm.$valid && vm.addData(vm.myData);" class="btn-primary btn">Save</button>
+    </form>
+</div>

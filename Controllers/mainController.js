@@ -1,4 +1,4 @@
-app.controller('mainController',['$state', function ($state) {
+app.controller('mainController', ['$state', function($state) {
 
-		
+
 }]);

@@ -1,3 +1,3 @@
-app.controller('homeController',function(){
+app.controller('homeController', function() {
 
 });
