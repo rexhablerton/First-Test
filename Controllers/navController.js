@@ -1,19 +1,19 @@
-app.controller('navController',['$state',function($state){
-	var vm = this;
+app.controller('navController', ['$state', function($state) {
+    var vm = this;
 
-	vm.goHome = function(){
-		$state.go('home');
-	}
+    vm.goHome = function() {
+        $state.go('home');
+    }
 
-	vm.goAbout = function(){
-		$state.go('about');
-	}
+    vm.goAbout = function() {
+        $state.go('about');
+    }
 
-	vm.goList = function(){
-		$state.go('list');
-	}
+    vm.goList = function() {
+        $state.go('list');
+    }
 
-	vm.goNew = function(){
-		$state.go('new');
-	}
+    vm.goNew = function() {
+        $state.go('new');
+    }
 }]);

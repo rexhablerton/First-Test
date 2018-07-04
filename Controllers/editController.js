@@ -1,31 +1,30 @@
-app.controller('editController',function($state,$stateParams){
-		
-		var vm = this;
+app.controller('editController', function($state, $stateParams) {
 
-		vm.globalKey = "Users";
+    var vm = this;
 
-		vm.Users=[];
-		vm.activate = function(){
-			vm.Userat = JSON.parse(window.localStorage.getItem(vm.globalKey));
-			console.log(vm.Userat);
-			vm.Users=vm.Userat;
-			var indeksi = $stateParams.indeksi;
-			vm.Userat = $stateParams.objekti;
-			console.log(vm.Userat);
-		}
-		vm.activate();
-		console.log(vm.Userat);
+    vm.globalKey = "Users";
 
-		vm.editData = function(Data){
+    vm.Users = [];
+    vm.activate = function() {
+        vm.Userat = JSON.parse(window.localStorage.getItem(vm.globalKey));
+        vm.Users = vm.Userat;
+        var indeksi = $stateParams.indeksi;
+        vm.Userat = $stateParams.objekti;
+        console.log(vm.Userat);
+    }
+    vm.activate();
+    console.log(vm.Userat);
 
-			var indeksi = $stateParams.indeksi;
-			vm.Useri = $stateParams.objekti;
-			console.log("Indexi", vm.Useri);
+    vm.editData = function(Data) {
+
+        var indeksi = $stateParams.indeksi;
+        vm.Useri = $stateParams.objekti;
+        console.log("Indexi", vm.Useri);
 
 
-			 vm.Users[indeksi] = Data;
-			localStorage.setItem(vm.globalKey, JSON.stringify(vm.Users));
-			$state.go('list');
-			
-		}
+        vm.Users[indeksi] = Data;
+        localStorage.setItem(vm.globalKey, JSON.stringify(vm.Users));
+        $state.go('list');
+
+    }
 });

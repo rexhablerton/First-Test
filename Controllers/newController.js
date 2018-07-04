@@ -1,40 +1,40 @@
-app.controller('newController', ['$state',function($state){
+app.controller('newController', ['$state', function($state) {
 
-	var vm= this;
-	
-	vm.myData = {
-		   myEmri: null,
-		   myMbiemri: null,
-		   myDatlindja:null,
-		   myVendi: null
-		};
+    var vm = this;
 
-	vm.users=[];
+    vm.myData = {
+        myEmri: null,
+        myMbiemri: null,
+        myDatlindja: null,
+        myVendi: null
+    };
 
-
-	vm.globalKey = "Users";
-	
-		// get items from users
-		vm.activate = function(){
-			vm.users=JSON.parse(localStorage.getItem('Users')) || [];
-		}
-		vm.activate();
+    vm.users = [];
 
 
-		vm.addData = function(item) {
-			console.log('add works!');
-			vm.users.push(item);
+    vm.globalKey = "Users";
 
-			localStorage.setItem(vm.globalKey,JSON.stringify(vm.users));
+    vm.activate = function() {
+        vm.users = JSON.parse(localStorage.getItem('Users')) || [];
+    }
+    vm.activate();
 
-			vm.myData = {
-			   	myEmri: null,
-			   	myMbiemri: null,
-			   	myDatlindja:null,
-			   	myVendi: null
-			};
-			$state.go('list');
-		}
 
-		
+    vm.addData = function(item) {
+        console.log('Item on add', item);
+        // item.myDatlindja.format('mm/dd/yyyy');
+        vm.users.push(item);
+
+        localStorage.setItem(vm.globalKey, JSON.stringify(vm.users));
+
+        vm.myData = {
+            myEmri: null,
+            myMbiemri: null,
+            myDatlindja: null,
+            myVendi: null
+        };
+        $state.go('list');
+    }
+
+
 }]);
